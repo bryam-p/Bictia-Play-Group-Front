@@ -16,11 +16,14 @@
 }
 
 .contenedor{
-    width: 700px;
-    height: 700px;
+    max-width: 700px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .caja {
@@ -45,7 +48,7 @@
 }
 
 .caja-abajo2{
-    width: 55%;
+    width: 60%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -109,4 +112,6 @@ p{
     border-radius: 9px;
 }
 
-
+@media (max-width: 1300px) {
+    
+  }
