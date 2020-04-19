@@ -1,15 +1,35 @@
-<button class="btn btn-primary" [routerLink]="['/home/home']"  > Home</button>
-<i class="fas fa-home fa-3x"></i>
+        
+<div class="background">
+</div>    
 
-<button class="btn btn-primary" [routerLink]="['/play']">Play</button>
+<div class="container">
+    <div class="logo">
+        <img src="assets/img/logo.png" alt="">
+    </div>
+    <div class="container">  
+        <button class="btn btn-primary orange" [routerLink]="['/home/home']"  > <i class="fas fa-home fa-2x"></i></button>
+        <button class="btn btn-primary red" [routerLink]="['/play']"><i class="fas fa-play fa-2x"></i></button>
+        <button class="btn btn-primary orange" [routerLink]="['/favorites']"><i class="fas fa-star fa-2x"></i></button>
+        <div class="buscador">
+            <input class="search" type="text">
+            <button height="10px"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="menu"> 
+            <input type="checkbox" id="btn-menu">        
+            <label class="btn btn-primary orange" for="btn-menu"><i class="fas fa-bars fa-2x"></i> </label>
+            <div class="container menu-block is-active">
+                <div class="menu-list">
+                    <ul>
+                       <li><a ><h5>Usuario</h5></a></li>
+                       <li><a [routerLink]="['/editarPerfil']" click> Editar Perfil</a></li>
+                       <li><a href=""> Elegir Perfil</a></li>
+                       <li><a href=""> Cerrar sesion</a></li>
+                   </ul>
+                </div>
+                </div>
+       
+        </div>
+    </div> 
+</div>
 
-<i class="fas fa-play fa-3x"></i>
 
-<button class="btn btn-primary" [routerLink]="['/favorites']">Favorites</button>
-
-<i class="fas fa-star fa-3x"></i>
-
-<button class="btn btn-primary" [routerLink]="['/editarPerfil']">Editar usuario</button>
-
-
-<i class="fas fa-bars fa-3x"></i>
