@@ -7,7 +7,7 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'play', component: PlayComponent },
   {path:'favorites',component:FavoritesComponent},
   {path:'editarPerfil', component: EditarPerfilComponent}
