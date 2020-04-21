@@ -1,18 +1,4 @@
-*{
-    font-family:'Baloo Paaji 2'
-}
 
-.title{
-    color: #C4FFEA;
-    text-align: center;
-}
-
-span{
-    color: #A2EA2F;
-    display: flex;
-    align-items: center;
-    font-size: xx-large;
-}
 .row.slider{
     grid-template-columns: 5% 28% 28% 28% 5%;
     grid-gap:30px;

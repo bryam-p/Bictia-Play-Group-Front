@@ -1,0 +1,39 @@
+span{
+    display:flex;
+    justify-content: center;
+}
+
+.title{
+    margin-top: 2%;
+}
+i{
+    background: #0B9599;
+    font-size: 130px;
+    margin: 20px;
+    color: #C4FFEA ;
+    padding: 5px 10px;
+    border: 1px solid #0B9599;
+    border-radius: 20px;
+}
+.avatar img{
+    height: 140px;
+    width: 140px;
+    margin: 20px;
+    border-radius: 20px;
+    align-content: center;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.volver{
+    border: none;
+    border-radius: 8px;
+    width: 20%;
+    font-size: 20px;
+    background: #FE8481;
+    color : rgb(196, 255, 234);
+}

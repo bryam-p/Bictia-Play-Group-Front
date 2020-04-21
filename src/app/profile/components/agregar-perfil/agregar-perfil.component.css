@@ -1,0 +1,111 @@
+span{
+    display:flex;
+    justify-content: center;
+}
+
+.title{
+    margin-top: 2%;
+}
+
+p{
+    font-size: medium;
+    max-width: 700px;
+}
+i{
+    background: #0B9599;
+    font-size: 130px;
+    margin: 20px;
+    color: #C4FFEA ;
+    padding: 5px 10px;
+    border: 1px solid #0B9599;
+    border-radius: 20px;
+}
+.avatar img{
+    height: 140px;
+    width: 140px;
+    margin: 20px;
+    border-radius: 20px;
+    align-content: center;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.editprofile{
+    max-width: 500px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+}
+.editprofile form{
+    width:-webkit-fill-available;
+}
+
+.sub-title {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+}
+
+.separacion-botones{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.botonModificar{
+    border: none;
+    border-radius: 8px;
+    width: 48%;
+    font-size: 20px;
+    background: #0B9599;
+    color : rgb(196, 255, 234);
+    
+}
+
+.botonModificar:hover{
+
+    background: rgb(5, 91, 94);
+    color : rgb(196, 255, 234);
+    
+}
+
+.volver{
+    border: none;
+    border-radius: 8px;
+    font-family: 'Baloo Paaji 2';
+    width: 48%;
+    font-size: 20px;
+    background: #FE8481;
+    color : rgb(196, 255, 234);
+}
+
+.volver:hover{
+
+    background: rgb(241, 92, 89);
+    color : rgb(196, 255, 234);
+}
+
+
+.email, .password{
+    border-radius: 9px;
+}
+
+@media (min-width: 1300px) {
+    .contenedor{
+        max-width: 500px;
+        max-height: 500px;
+        width: 100%;
+       
+    }
+}

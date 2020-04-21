@@ -1,1 +1,34 @@
-<p>editar-perfil works!</p>
+<div class="container">
+    <span class="title">Editar Perfil</span>
+    <span class="sub-title"><h6>Elige tu avatar</h6></span>
+    <div class="row">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU" alt=""></div>
+        <div class="avatar"><img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png" alt=""></div>
+        <div class="avatar"><i class="fas fa-plus-square"></i></div>
+    </div>
+</div>
+<div class="container editprofile">
+    <div class="container">
+        <form class="text-center ">
+
+        <div class="form-group ">
+            <input type="select" class="form-control form-control-sm text-center email" id="selectNickname"
+                aria-describedby="emailHelp" placeholder="Elegir Nickname">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control form-control-sm text-center email" placeholder="Cambiar Nickname">
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="form-control form-control-sm text-center email" placeholder="Confirma tu Contraseña">
+        </div>
+
+        <div class="separacion-botones">
+            <button class="volver" [routerLink]="['/home/home']"  >Salir</button>
+            <button type="submit" class="botonModificar">Modificar</button>
+        </div>
+
+        </form>
+    </div>
+</div>

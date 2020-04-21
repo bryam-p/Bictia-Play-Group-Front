@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 
 
 
+
 @NgModule({
   declarations: [HomeComponent, PlayComponent, FavoritesComponent, EditarPerfilComponent, SearchComponent],
   imports: [

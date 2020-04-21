@@ -1,1 +1,39 @@
-<p>agregar-perfil works!</p>
+
+<div class="container">
+    <span class="title">Agregar un nuevo perfil</span><br>
+    <span>
+    <p>Bienvenido(a) a BICTIA Play KIDS una plataforma pensada en la diversion, entretenimiento y aprendizaje de los niños, acontinuacion podras crear un perfil para un niño y que pueda disfrutar de todo nuestro contenido.</p></span>
+    <span class="sub-title"><h6>Elige un avatar</h6></span>
+    <div class="row">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU" alt=""></div>
+        <div class="avatar"><img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png" alt=""></div>
+        <div class="avatar"><i class="fas fa-plus-square"></i></div>
+    </div>
+</div>
+<div class="container editprofile">
+    <div class="container">
+        <form class="text-center ">
+
+        <div class="form-group ">
+            <input type="select" class="form-control form-control-sm text-center email" id="selectNickname"
+                aria-describedby="emailHelp" placeholder="Nickname">
+        </div>
+
+        <div class="form-group" style="display: flex; justify-content: space-around;">
+            <label for="date" style="color: #C4FFEA ;"><h5>Fecha de nacimiento</h5></label>
+            <input type="date" class="form-control form-control-sm text-center email" placeholder="Fecha de nacimiento" style="max-width: 200px;">
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="form-control form-control-sm text-center email" placeholder="Confirma tu Contraseña">
+        </div>
+
+        <div class="separacion-botones">
+            <button class="volver" [routerLink]="['/home/home']"  >Salir</button>
+            <button type="submit" class="botonModificar">Modificar</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+

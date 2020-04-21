@@ -4,4 +4,20 @@ body {
 
 }
 
+*{
+   font-family:'Baloo Paaji 2'
+}
+
+.title{
+   color: #C4FFEA;
+   text-align: center;
+}
+
+span{
+   color: #C4FFEA;
+   display: flex;
+   align-items: center;
+   font-size: xx-large;
+}
+
 
