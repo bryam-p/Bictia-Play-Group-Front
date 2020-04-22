@@ -1,23 +1,68 @@
+.carousel{
+    padding: 0 3%;
+}
 
+.title{
+    margin: 2%;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: space-between;
+    width: 115%;
+    margin: 0;
+	left: -95px;
+	top: auto;
+    bottom: 80px;
+
+}
+
+/* The colour of the indicators */
+.carousel-indicators i {
+    color: #A2EA2F;  
+}
+
+
+.slider{
+    width: 290px;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(179, 179, 179);
+} 
+
+.row .col{
+    text-align: center;
+}
+
+.slider{
+    width: 290px;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(179, 179, 179);
+} 
+.discover{
+    margin: 0 7%;
+}
+iframe{
+    width: 400px;
+    height: 280px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(179, 179, 179);
+} 
+.row{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+/* 
 .row.slider{
     grid-template-columns: 5% 28% 28% 28% 5%;
     grid-gap:30px;
     text-align: center;
     width: 75vw;
 }
-.row{
-    margin-top: 30px;
-    margin-bottom: 60px;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap:30px;
-    width:76vw
-}
-.card, iframe{
-    width: 100%;
-    height: 120%;
-    max-height: max-content;
-    border-radius: 10px;
-    border: none;
-    background: rgb(179, 179, 179);
-}
+
+*/

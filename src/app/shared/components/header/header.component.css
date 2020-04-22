@@ -2,19 +2,24 @@
 .background{
     margin-top: 60px;
     background: #C4FFEA;
-    height: 80px;
+    height: 110px;
     width: 100%;
 }
+.nav-bar{
+    display: flex;
+    margin: -50px 50px;
+    justify-content: space-evenly;
+}
+.logo{
+    margin-top: -130px;
+    height: 270px ;   
+}
 .logo img{
-    width: 200px;
-    margin-top: 0;
-    margin-top: -100px;
-    margin-left: -40%;
-    margin-right: 10%;
+    height: 100%;
 }
 .container{
     display: flex;
-    margin-top: -30px;
+    margin: -45px 0;
     height: 10%;
     justify-content: space-evenly;
 }
@@ -25,31 +30,43 @@
     display: inherit;
     background-color: #0B9599;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .search{
     width: -webkit-fill-available;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
+    margin: 5px;
+}
+.fa-search{
+    font-size: 30px;
+    width: 50px;
 }
 .buscador button{
    background: #0B9599;
    border: none;
+   height: 50px;
 }
 .btn{
     background: #0B9599;
-    border: none;
-    margin-bottom: 5px;
+    border: solid 1px #0B9599;
+    border-radius: 15px;
+    margin:0 15px;
 }
 i {
     color : white;
-    width: 40px;
+    width: 100px;
+    font-size: 50px;
+    padding: 10px;
 }
 .orange:hover{
     background: #FE773F;
+    border: solid 1px #FE773F;
+
 }
 .red:hover{
     background: #EE2026;
+    border: solid 1px #EE2026;
 }
 .menu-block{
     text-decoration: none;
@@ -63,7 +80,8 @@ i {
     border-radius: 10px;
     margin-top: 2px;
     display: none ;
-    transition: .5s;
+    font-size: larger;
+    z-index: 1;
 }
 
 .menu:hover > .menu-block{
@@ -74,9 +92,10 @@ i {
     list-style: none;
     color:white;
     border-bottom: 1px solid white;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .menu-block a{
+    margin-top: 2px;
     text-decoration: none;
     color: white;
 }
@@ -98,3 +117,19 @@ i {
     display: block;
 
 } 
+
+@media(max-width:868px){
+    .buscador{
+        display: none;
+    }
+    .background{
+        height: 110px;
+    }
+    .logo{
+        height: 250px;
+    }
+    i{
+        font-size: 50px;
+        width: 80px;
+    }
+}
