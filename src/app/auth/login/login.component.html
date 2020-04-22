@@ -8,26 +8,26 @@
                 Login
             </div>
             <div class="caja-abajo2">
-                <form class="text-center">
+                <div class="text-center">
 
                     <div class="form-group">
-                        <input type="email" class="form-control text-center email" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" placeholder="Email">
+                        <input type="email" name="email" class="form-control text-center email" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="UserHTML.email">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control text-center password" id="exampleInputPassword1"
-                            placeholder="Contraseña">
+                        <input type="password" name="password" class="form-control text-center password"
+                            id="exampleInputPassword1" placeholder="Contraseña" [(ngModel)]="UserHTML.password">
                     </div>
 
-                    <button type="submit" class="botonEntrar">Entrar</button>
+                    <button class="botonEntrar" (click)="loginUser()">Entrar</button>
 
                     <div class="registro">
                         <p>¿Quieres registrar a tu hijo?</p>
-                        <button class="botonRegistro" [routerLink]="['/auth/register']"  >Registrarse</button>
+                        <button class="botonRegistro" [routerLink]="['/auth/register']">Registrarse</button>
                     </div>
 
-                </form>
+                </div>
 
             </div>
         </div>
