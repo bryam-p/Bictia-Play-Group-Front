@@ -66,3 +66,53 @@ iframe{
 }
 
 */
+.reproductor{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0.9);
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: none;
+    transition: opacity .3s linear,top .3s ease-out;
+    opacity: 1;
+}
+
+.reproductor .video_youtube_gc {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.reproductor .video_youtube_gc .video_youtube {
+    position: relative;
+    width: 80%;
+    padding-bottom: 45%;
+    margin: auto;
+}
+.reproductor .video_youtube_gc .video_youtube .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.reproductor .cerrar{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 200;
+}
+.mostrarVideo{
+    display: block;
+}
+#youtube{
+    cursor: pointer;
+}

@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  cerrarVideo() {
+    // Función para cerrar el reproductor del video
+    const reproductor = document.getElementById('reproductor');
+    reproductor.classList.toggle('mostrarVideo');
+  }
+
+  abrirVideo() {
+    // Función para cerrar el reproductor del video
+    const reproductor = document.getElementById('reproductor');
+    reproductor.classList.toggle('mostrarVideo');
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
+
