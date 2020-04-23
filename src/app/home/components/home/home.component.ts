@@ -7,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  const reproductor = document.getElementById('reproductor');
+  const videoYoutube = document.getElementById('videoYoutube');
+
   cerrarVideo() {
     // Función para cerrar el reproductor del video
-    const reproductor = document.getElementById('reproductor');
     reproductor.classList.toggle('mostrarVideo');
+    videoYoutube.setAttribute('src', 'https://www.youtube.com/embed/FRbV0nKN_ss');
+
   }
 
   abrirVideo() {
     // Función para cerrar el reproductor del video
-    const reproductor = document.getElementById('reproductor');
+    videoYoutube.setAttribute('src', 'https://www.youtube.com/embed/FRbV0nKN_ss');
     reproductor.classList.toggle('mostrarVideo');
+
   }
 
   constructor() { }
