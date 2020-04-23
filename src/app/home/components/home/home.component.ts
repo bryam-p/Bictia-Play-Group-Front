@@ -13,13 +13,14 @@ export class HomeComponent implements OnInit {
   cerrarVideo() {
     // Función para cerrar el reproductor del video
     reproductor.classList.toggle('mostrarVideo');
-    videoYoutube.setAttribute('src', 'https://www.youtube.com/embed/FRbV0nKN_ss');
+    videoYoutube.setAttribute('src', 'https://www.youtube.com/embed/UXujYNnPEsM');
+    console.log("Se cerró el video");
 
   }
 
   abrirVideo() {
     // Función para cerrar el reproductor del video
-    videoYoutube.setAttribute('src', 'https://www.youtube.com/embed/FRbV0nKN_ss');
+    videoYoutube.setAttribute('src', 'https://www.youtube.com/embed/UXujYNnPEsM');
     reproductor.classList.toggle('mostrarVideo');
 
   }
