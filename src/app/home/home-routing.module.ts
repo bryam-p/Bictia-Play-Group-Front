@@ -10,8 +10,8 @@ import { AgregarPerfilComponent} from '../profile/components/agregar-perfil/agre
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'play', component: PlayComponent },
+  {path: '', component: HomeComponent },
+  {path: 'play', component: PlayComponent },
   {path: 'favorites', component: FavoritesComponent},
   {path: 'editarPerfil', component: EditarPerfilComponent},
   {path: 'elegirPerfil', component: ElegirPerfilComponent},

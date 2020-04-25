@@ -68,9 +68,10 @@
 
 <div class="discover">
     <div class="title"><h1>Descubre nuevas aventuras</h1></div>
-        <div class="row">
-          <iframe src="https://www.youtube.com/embed/HGUQUUzJNdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe  src="https://www.youtube.com/embed/UXujYNnPEsM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe  src="https://www.youtube.com/embed/FRbV0nKN_ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div *ngFor="let video of films">
+            <div class="row">
+              <iframe src="{{video.url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p>{{video.url}}</p>
+            </div>
         </div>
 </div>
