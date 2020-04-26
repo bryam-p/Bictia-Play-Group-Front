@@ -12,6 +12,40 @@ import Swal from 'sweetalert2';
 export class HomeComponent implements OnInit {
 
   public videoDefault = null;
+  ultimosEstrenosPPAL = [
+    {
+      url: 'https://www.youtube.com/embed/1ZIQPH92hxM',
+      name: 'Mickey Mouse - Una boda en Gollywodd',
+      urlImage: 'preview_mickeyUnabodaenGollywodd.png'
+    },
+    {
+      url: 'https://www.youtube.com/embed/lC2zy41B1GM',
+      name: 'La Casa de Mickey Mouse',
+      urlImage: 'preview_laCasadeMickey.png'
+    },
+    {
+      url: 'https://www.youtube.com/embed/NsSxViwqbZ8',
+      name: 'Despertador Alocado - Minnie Mouse Toons',
+      urlImage: 'preview_MinnieToons.png'
+    }
+  ];
+  ultimosEstrenosSEC = [
+    {
+      url: 'https://www.youtube.com/embed/0dkHZYeIGIk',
+      name: 'La vaca Lola - Canciones infantiles',
+      urlImage: 'preview_vacaLola.png'
+    },
+    {
+      url: 'https://www.youtube.com/embed/VHfCOT_ZKu8',
+      name: 'Leo - El pequeño camión',
+      urlImage: 'preview_leoCamineta.png'
+    },
+    {
+      url: 'https://www.youtube.com/embed/GetAwMNY2kY',
+      name: 'Paw Patrol - La Fuerza une al equipo',
+      urlImage: 'preview_pawpatrolLaFuerza.png'
+    }
+  ];
 
   cerrarVideo() {
     // Función para cerrar el reproductor del video

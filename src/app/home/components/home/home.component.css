@@ -44,6 +44,8 @@
 }
 .discover{
     padding: 20px 20px 50px;
+    margin: auto;
+    max-width: 1250px;
 }
 iframe{
     width: 400px;
@@ -110,9 +112,9 @@ iframe{
 }
 .contenedorVideos{
     margin: auto;
-    max-width: 1250px;
+    max-width: 1000px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .cajaVideo{
@@ -165,4 +167,7 @@ iframe{
 .cajaVideo .agregarFavorito{
     font-size: 25px;
     text-align: right;
+}
+#resultado{
+    display: none;
 }

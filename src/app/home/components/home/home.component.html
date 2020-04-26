@@ -14,30 +14,6 @@
     <div class="title">
         <h1>Últimos estrenos</h1>
     </div>
-
-    <div class="contenedorVideos">
-
-        <span *ngFor="let video of films, let index = index">
-
-            <div class="cajaVideo"  *ngIf="index<3">
-                <div class="video">
-                    <div class="imagen">
-                        <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
-                    </div>
-                </div>
-                <div class="play" (click)="abrirVideo(video.url)">
-                    <i class="fab fa-youtube" id="youtube"></i>
-                </div>
-                <div class="nombre">
-                    {{video.name}}
-                    <div class="agregarFavorito" (click)="agregarFavorito(video.url)">{{this.recorrido}}<i class="fas fa-heart"></i></div>                    
-                </div>
-            </div>
-        </span>
-    </div>
-
-    [Slider en construcción]
-
     <div class="row blog">
         <div class="col-md-12">
             <div id="blogCarousel" class="carousel slide" data-ride="carousel">
@@ -50,72 +26,77 @@
                 <!-- Carousel items -->
                 <div class="carousel-inner">
 
+                    <!-- Primer Slider -->
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-md-4">
-                                <iframe class="slider" src="https://www.youtube.com/embed/FRbV0nKN_ss" frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <a href="#">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <iframe class="slider" src="https://www.youtube.com/embed/ELm4ZJDEFME"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <iframe class="slider" src="https://www.youtube.com/embed/UXujYNnPEsM"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                                </a>
-                            </div>
+                            <span *ngFor="let ultimoEstreno of ultimosEstrenosPPAL, let index = index">
+                                <div class="cajaVideo"  *ngIf="index<3">
+                                    <div class="video">
+                                        <div class="imagen">
+                                            <img src="assets/videosPreview/{{ultimoEstreno.urlImage}}" alt="{{ultimoEstreno.name}}">
+                                        </div>
+                                    </div>
+                                    <div class="play" (click)="abrirVideo(ultimoEstreno.url)">
+                                        <i class="fab fa-youtube" id="youtube"></i>
+                                    </div>
+                                    <div class="nombre">
+                                        {{ultimoEstreno.name}}
+                                    </div>                     
+                                </div>
+                            </span>
                         </div>
-                        <!--.row-->
                     </div>
-                    <!--.item-->
-
+                    
+                    <!-- Segundo Slider -->
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <iframe class="slider" src="https://www.youtube.com/embed/5ZCgbGgA-_8"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <iframe class="slider" src="https://www.youtube.com/embed/HGUQUUzJNdM"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <iframe class="slider" src="https://www.youtube.com/embed/cxj7sdv6rn4"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                                </a>
-                            </div>
+                            <span *ngFor="let ultimoEstreno of ultimosEstrenosSEC, let index = index">
+                                <div class="cajaVideo"  *ngIf="index<3">
+                                    <div class="video">
+                                        <div class="imagen">
+                                            <img src="assets/videosPreview/{{ultimoEstreno.urlImage}}" alt="{{ultimoEstreno.name}}">
+                                        </div>
+                                    </div>
+                                    <div class="play" (click)="abrirVideo(ultimoEstreno.url)">
+                                        <i class="fab fa-youtube" id="youtube"></i>
+                                    </div>
+                                    <div class="nombre">
+                                        {{ultimoEstreno.name}}
+                                    </div>                     
+                                </div>
+                            </span>
                         </div>
-                        <!--.row-->
                     </div>
-                    <!--.item-->
 
                 </div>
-                <!--.carousel-inner-->
             </div>
-            <!--.Carousel-->
 
+        </div>
+    </div>
+</div>
+
+
+<!-- Aquí se deben imprimir los resultados de busqueda, el contenedor está en display none por defecto -->
+<div class="discover" id="resultado">
+    <div class="title">
+        <h1>Resultado de búsqueda</h1>
+    </div>
+
+    <div class="contenedorVideos">
+        <div *ngFor="let video of films| slice:0:6" class="cajaVideo">
+            <div class="video">
+                <div class="imagen">
+                    <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
+                </div>
+            </div>
+            <div class="play" (click)="abrirVideo(video.url)">
+                <i class="fab fa-youtube" id="youtube"></i>
+            </div>
+            <div class="nombre">
+                {{video.name}}
+                <div class="agregarFavorito" (click)="agregarFavorito(video.url)"><i class="fas fa-heart"></i></div>
+            </div>
+            
         </div>
     </div>
 </div>
@@ -126,7 +107,7 @@
     </div>
 
     <div class="contenedorVideos">
-        <div *ngFor="let video of films" class="cajaVideo">
+        <div *ngFor="let video of films| slice:0:12" class="cajaVideo">
             <div class="video">
                 <div class="imagen">
                     <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
