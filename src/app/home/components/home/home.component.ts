@@ -63,10 +63,10 @@ export class HomeComponent implements OnInit {
     videoYoutube.setAttribute('src', filmUrl);
     this.videoDefault = filmUrl;
     reproductor.classList.toggle('mostrarVideo');
-    console.log("Este es el video: ->",this.videoDefault);
-  }  
+    console.log("Este es el video: ->", this.videoDefault);
+  }
 
-  agregarFavorito(filmUrl){
+  agregarFavorito(filmUrl) {
     console.log('%cConectar con la función', 'color: yellow');
     alert("Falta conectar con la función");
   }
@@ -75,18 +75,22 @@ export class HomeComponent implements OnInit {
   public films: Film[];
   public recorrido: number;
 
-  constructor(private service: FilmsService) { 
-    this.recorrido =1;
+  constructor(private service: FilmsService) {
+    this.recorrido = 1;
   }
 
   ngOnInit(): void {
     this.getFilms();
   }
 
-  getFilms(){
+  getFilms() {
     this.service.getFilms().subscribe((res: any) => {
       console.log(res);
-      switch (res.statusCode) {
+      this.films = res.films;
+      console.log(res.films.url);
+
+      /*
+switch (res.statusCode) {
         case 400:
           Swal.fire({
             icon: "error",
@@ -98,12 +102,12 @@ export class HomeComponent implements OnInit {
           this.films = res.films;
           console.log(res.films.url);
           break;
-        default:
+        case 500:
           console.log('Error de conexión');
-          this.films = res.films;
-          console.log(res.films.url);
           break;
       }
+      */
+
     });
   }
 
