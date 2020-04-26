@@ -1,77 +1,145 @@
+<div class="reproductor" id="reproductor">
+    <div class="cerrar" (click)="cerrarVideo()"><i class="fas fa-times-circle fa-3x"></i></div>
+    <div class="video_youtube_gc">
+        <div class="video_youtube">
+            <iframe class="video" id="videoYoutube" width="560" height="260"
+                src="https://www.youtube.com/embed/FRbV0nKN_ss" frameborder="0"
+                allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </div>
+</div>
+
 
 <div class="container carousel">
-  <div class="title"><h1>Ultimos estrenos</h1></div>
-  <div class="row blog">
-      <div class="col-md-12">
-          <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+    <div class="title">
+        <h1>Últimos estrenos</h1>
+    </div>
 
-              <span class="carousel-indicators">
-                  <i class="fas fa-arrow-circle-left fa-2x" data-target="#blogCarousel" data-slide-to="0"></i>
-                  <i class="fas fa-arrow-circle-right fa-2x" data-target="#blogCarousel" data-slide-to="1"></i>
-              </span>
+    <div class="contenedorVideos">
 
-              <!-- Carousel items -->
-              <div class="carousel-inner">
+        <span *ngFor="let video of films, let index = index">
 
-                  <div class="carousel-item active">
-                      <div class="row">
-                          <div class="col-md-4">
-                                <iframe class="slider" src="https://www.youtube.com/embed/FRbV0nKN_ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="cajaVideo"  *ngIf="index<3">
+                <div class="video">
+                    <div class="imagen">
+                        <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
+                    </div>
+                </div>
+                <div class="play" (click)="abrirVideo(video.url)">
+                    <i class="fab fa-youtube" id="youtube"></i>
+                </div>
+                <div class="nombre">
+                    {{video.name}}
+                    <div class="agregarFavorito" (click)="agregarFavorito(video.url)">{{this.recorrido}}<i class="fas fa-heart"></i></div>                    
+                </div>
+            </div>
+        </span>
+    </div>
+
+    [Slider en construcción]
+
+    <div class="row blog">
+        <div class="col-md-12">
+            <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+                <span class="carousel-indicators">
+                    <i class="fas fa-arrow-circle-left fa-2x" data-target="#blogCarousel" data-slide-to="0"></i>
+                    <i class="fas fa-arrow-circle-right fa-2x" data-target="#blogCarousel" data-slide-to="1"></i>
+                </span>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <iframe class="slider" src="https://www.youtube.com/embed/FRbV0nKN_ss" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                                 <a href="#">
-                              </a>
-                          </div>
-                          <div class="col-md-4">
-                              <a href="#">
-                                <iframe  class="slider" src="https://www.youtube.com/embed/ELm4ZJDEFME" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                              </a>
-                          </div>
-                          <div class="col-md-4">
-                              <a href="#">
-                                <iframe class="slider" src="https://www.youtube.com/embed/UXujYNnPEsM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                              </a>
-                          </div>
-                      </div>
-                      <!--.row-->
-                  </div>
-                  <!--.item-->
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <iframe class="slider" src="https://www.youtube.com/embed/ELm4ZJDEFME"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <iframe class="slider" src="https://www.youtube.com/embed/UXujYNnPEsM"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </a>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+                    <!--.item-->
 
-                  <div class="carousel-item">
-                      <div class="row">
-                          <div class="col-md-4">
-                              <a href="#">
-                                <iframe class="slider" src="https://www.youtube.com/embed/5ZCgbGgA-_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                              </a>
-                          </div>
-                          <div class="col-md-4">
-                              <a href="#">
-                                <iframe class="slider" src="https://www.youtube.com/embed/HGUQUUzJNdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                              </a>
-                          </div>
-                          <div class="col-md-4">
-                              <a href="#">
-                                <iframe class="slider" src="https://www.youtube.com/embed/cxj7sdv6rn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                              </a>
-                          </div>
-                      </div>
-                      <!--.row-->
-                  </div>
-                  <!--.item-->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <iframe class="slider" src="https://www.youtube.com/embed/5ZCgbGgA-_8"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <iframe class="slider" src="https://www.youtube.com/embed/HGUQUUzJNdM"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <iframe class="slider" src="https://www.youtube.com/embed/cxj7sdv6rn4"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </a>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+                    <!--.item-->
 
-              </div>
-              <!--.carousel-inner-->
-          </div>
-          <!--.Carousel-->
+                </div>
+                <!--.carousel-inner-->
+            </div>
+            <!--.Carousel-->
 
-      </div>
-  </div>
+        </div>
+    </div>
 </div>
 
 <div class="discover">
-    <div class="title"><h1>Descubre nuevas aventuras</h1></div>
-        <div *ngFor="let video of films">
-            <div class="row">
-              <iframe src="{{video.url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p>{{video.url}}</p>
+    <div class="title">
+        <h1>Descubre nuevas aventuras</h1>
+    </div>
+
+    <div class="contenedorVideos">
+        <div *ngFor="let video of films" class="cajaVideo">
+            <div class="video">
+                <div class="imagen">
+                    <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
+                </div>
             </div>
+            <div class="play" (click)="abrirVideo(video.url)">
+                <i class="fab fa-youtube" id="youtube"></i>
+            </div>
+            <div class="nombre">
+                {{video.name}}
+                <div class="agregarFavorito" (click)="agregarFavorito(video.url)"><i class="fas fa-heart"></i></div>
+            </div>
+            
         </div>
+    </div>
 </div>

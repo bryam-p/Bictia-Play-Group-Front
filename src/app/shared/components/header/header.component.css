@@ -1,42 +1,56 @@
 
 .background{
-    margin-top: 60px;
     background: #C4FFEA;
-    height: 110px;
     width: 100%;
+    height: 100px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .nav-bar{
     display: flex;
-    margin: -50px 50px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+    
 }
 .logo{
-    margin-top: -130px;
-    height: 270px ;   
+    width: 350px;   
 }
 .logo img{
-    height: 100%;
+    max-width: 100%;    
 }
-.container{
+.logo img{
+
+}
+.contenedor{
+    width: 100%;
     display: flex;
-    margin: -45px 0;
-    height: 10%;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .buscador{
-    margin: auto 0;
     width: 40%;
-    display: inherit;
+    display: flex;
     background-color: #0B9599;
     padding: 5px;
     border-radius: 15px;
+    align-items: center;
 }
 .search{
     width: -webkit-fill-available;
     border-radius: 15px;
     border: none;
     margin: 5px;
+    padding: 15px 10px;
+    font-size: 20px;
+        text-align: center;
+        color: grey;
 }
 .fa-search{
     font-size: 30px;
@@ -51,11 +65,10 @@
     background: #0B9599;
     border: solid 1px #0B9599;
     border-radius: 15px;
-    margin:0 15px;
+    margin:0 10px;
 }
 i {
     color : white;
-    width: 100px;
     font-size: 50px;
     padding: 10px;
 }
@@ -78,10 +91,10 @@ i {
     width: fit-content;
     height: auto;
     border-radius: 10px;
-    margin-top: 2px;
+    margin-top: 5px;
     display: none ;
     font-size: larger;
-    z-index: 1;
+    z-index: 30;
 }
 
 .menu:hover > .menu-block{
@@ -123,13 +136,24 @@ i {
         display: none;
     }
     .background{
-        height: 110px;
+        height: 70px;
+        margin: 40px 0 30px;
     }
     .logo{
-        height: 250px;
+        height: 150px;
+    }
+    .btn{
+        padding: 0;
+        border-radius: 10px;
+        margin: 0 5px;
     }
     i{
-        font-size: 50px;
-        width: 80px;
+        font-size: 20px;
+    }
+    .menu-block.is-active{
+        margin-right: 0;
+     /*    transform: translateX(-100%);
+        transition: all 0.3s; */
+        right: 0;
     }
 }
