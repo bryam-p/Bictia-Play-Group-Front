@@ -5,13 +5,17 @@
             <img src="assets/img/logo.png" alt="Bictia Play Kids Logo">
         </div>
         <div class="contenedor">
-            <button class="btn btn-primary orange" [routerLink]="['/home/home']"> <i class="fas fa-home fa-2x"></i></button>
+            <button class="btn btn-primary orange" [routerLink]="['/home/home']"> <i
+                    class="fas fa-home fa-2x"></i></button>
             <button class="btn btn-primary red" [routerLink]="['/play']"><i class="fas fa-play fa-2x"></i></button>
-            <button class="btn btn-primary orange" [routerLink]="['/favorites']"><i class="fas fa-star fa-2x"></i></button>
+            <button class="btn btn-primary orange" [routerLink]="['/favorites']"><i
+                    class="fas fa-star fa-2x"></i></button>
+
             <div class="buscador">
-                <input class="search" type="text">
-                <button height="10px"><i class="fas fa-search"></i></button>
+                <input class="search" type="text" name="name" [(ngModel)]="search.name">
+                <button height="10px" (click)="gbusqueda();getSearch()"><i class="fas fa-search"></i></button>
             </div>
+
             <div class="menu">
                 <input type="checkbox" id="btn-menu">
                 <label class="btn btn-primary orange" for="btn-menu"><i class="fas fa-bars fa-2x"></i> </label>
@@ -23,15 +27,14 @@
                                 </a></li>
                             <li><a [routerLink]="['/editarPerfil']" click> Editar Perfil</a></li>
                             <li><a [routerLink]="['/elegirPerfil']"> Elegir Perfil</a></li>
-                            <li><a href="" (click)="logout()" [routerLink]= "['/auth']" > Cerrar sesion</a></li>
+                            <li><a href="" (click)="logout()" [routerLink]="['/auth']"> Cerrar sesion</a></li>
                         </ul>
                     </div>
                 </div>
-    
+
             </div>
         </div>
     </div>
 
 
 </div>
-

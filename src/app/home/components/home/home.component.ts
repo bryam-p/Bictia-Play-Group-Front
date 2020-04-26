@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Film } from 'src/app/interface/film.interface';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import Swal from 'sweetalert2';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -11,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class HomeComponent implements OnInit {
 
+  resultsSearch:any[]=[]
   public videoDefault = null;
   ultimosEstrenosPPAL = [
     {
@@ -77,10 +79,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private service: FilmsService) {
     this.recorrido = 1;
+    this.getSearch()
   }
 
   ngOnInit(): void {
     this.getFilms();
+  }
+
+  getSearch(){
+    this.service.$ConecctionSearch.subscribe((data:any)=>{
+      console.log("Datos del search en home",data)
+      this.resultsSearch = data.results 
+      const statusSearch = document.getElementById('resultado')
+      statusSearch.style.display = 'block'
+    })
   }
 
   getFilms() {
