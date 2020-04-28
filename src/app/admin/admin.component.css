@@ -1,0 +1,64 @@
+.title{
+  margin: 3% 0;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  padding: 0 15%;
+  align-items: center;
+}
+.separacion-botones{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.botonGuardar{
+  border: none;
+  border-radius: 8px;
+  width: 48%;
+  font-size: 20px;
+  background: #0B9599;
+  color : rgb(196, 255, 234);
+
+}
+
+.botonGuardar:hover{
+
+  background: rgb(5, 91, 94);
+  color : rgb(196, 255, 234);
+
+}
+
+.volver{
+  border: none;
+  border-radius: 8px;
+  font-family: 'Baloo Paaji 2';
+  width: 48%;
+  font-size: 20px;
+  background: #FE8481;
+  color : rgb(196, 255, 234);
+}
+
+.volver:hover{
+
+  background: rgb(241, 92, 89);
+  color : rgb(196, 255, 234);
+}
+
+
+.video-preview{
+  background: honeydew;
+  width: 300px;
+  height: 300px;
+  margin: 5% 0;
+  border-radius: 10px;
+}
+
+@media(max-width:768px){
+form{
+  display: block;
+}
+
+}

@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="title">
+    <h1>Subir video</h1>
+  </div>
+    <form class="text-center ">
+    <div class="container formulario">
+        <div class="form-group ">
+        <input type="select" class="form-control form-control-sm text-center email" id="selectNickname"
+            aria-describedby="emailHelp" placeholder="Titulo del Video">
+        </div>
+
+        <div class="form-group">
+        <input type="text" class="form-control form-control-sm text-center email" placeholder="Seleccionar Categoria">
+        </div>
+
+        <div class="form-group">
+        <input type="url" class="form-control form-control-sm text-center email" placeholder="Ingresa URL del video">
+        </div>
+
+        <div class="form-group">
+          <input type="url" class="form-control form-control-sm text-center email" placeholder="Ingresa URL de la imagen">
+          </div>
+
+        <div class="separacion-botones">
+          <button class="volver" [routerLink]="['/home/home']"  >Salir</button>
+          <button type="submit" class="botonGuardar">Guardar</button>
+        </div>
+
+    </div>
+    <div class="container preview">
+        <div class="video-preview">
+
+        </div>
+    </div>
+  </form>
+</div>
+
+
