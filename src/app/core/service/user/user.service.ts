@@ -28,4 +28,7 @@ export class UserService {
     }
   }
 
+  postProfile(id:string, user:any){
+    return this.http.post<any>(`${this.url}/api/user/addProfile/${id}`, user )
+  }
 }

@@ -22,4 +22,5 @@ export class FilmsService {
     console.log(name)
     return this.http.get<any>(`${this.url}/api/film/typehead?name=${name}`)
   }
+
 }
