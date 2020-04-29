@@ -9,42 +9,93 @@
         <h6>Elige un avatar</h6>
     </span>
     <div class="row">
-        <button class="avatar" (click)="getUrl('1')">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU"
-                alt="">
-        </button>
-        <button class="avatar">
-            <img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png"
-                alt="">
-        </button>
+        <div class="avatar" (click)="getUrl('1')">
+            <button class="btn btn-info btn-sm m-2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU"
+                    alt="">
+            </button>
+        </div>
+        <div class="avatar"  (click)="getUrl('2')">
+            <button class="btn btn-info btn-sm m-2">
+                <img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png"
+                    alt="">
+            </button>
+
+        </div>
         <div href="#ventana" data-toggle="modal" class="avatar"><i class="fas fa-plus-square"></i></div>
 
-        <div class="modal" tabindex="-1" role="dialog" id="ventana">
-            <div class="modal-dialog" role="document">
+        <div class="mol modal" tabindex="-1" role="dialog" id="ventana">
+            <div class="modal-dialog modal-lg " role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Elige tu avatar</h5>
+                    <div class="modal-header ">
+                        <h5 class="titulo-modal modal-title col-12 text-center">Elige tu avatar</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <div class="card-deck">
-                            <button class="btn btn-info card ">
-                                <img class="card-img-top avatar" src="data:image/png;base64,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" alt="Card image cap">
-                            </button>
-                            <button class="btn btn-info card ">
-                                <img class="card-img-top avatar" src="https://pbs.twimg.com/profile_images/3123088739/8dc63ef2aebd550dbc3efb0d6d3a9894.png" alt="Card image cap">
-                            </button>
-                            <button class="btn btn-info card">
-                                <img class="card-img-top avatar" src="https://pbs.twimg.com/profile_images/3123088739/8dc63ef2aebd550dbc3efb0d6d3a9894.png" alt="Card image cap">
-                            </button>
+                        <div class="card-deck d-flex justify-content-center">
+                            <div class="avatar" (click)="getUrl('3')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://lh3.googleusercontent.com/proxy/mYgvsDOl4XEWZZQVgMaJ8dsDSexyYQkpfDqqj_OnYDAFcMJ4QlUk3XjPwHiehCHY3L05TEqZlDZLdJZr9asor3tXDIf2ALmv3FbgdeVlsUvaUSJnyurLFtepOA"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('4')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://i.pinimg.com/originals/08/ac/87/08ac87dbf626296177949d1add13700b.gif"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('5')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://images.vexels.com/media/users/3/128647/isolated/lists/aee14c147b20d3c3244cad76322a06d0-divertidos-dibujos-animados-de-rinoceronte.png"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('6')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/0/0f/Ed5c13d68b783d31ba157e4a13d4dfd1.png/revision/latest?cb=20180518111508"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('7')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://img.cartoongoodies.com/wp-content/uploads/2019/11/Dora-the-Explorer-Boots-sitting.png"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('8')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://i.pinimg.com/originals/90/ae/14/90ae1493c6603fabf6e0480aab6af234.png"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('9')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://es.seaicons.com/wp-content/uploads/2016/06/Cars-pixar-4-icon.png"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('10')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://4.bp.blogspot.com/-bUO4-KRV2CM/UZp5yn5kr7I/AAAAAAAAAEM/HZbcsZMIMOs/s1600/BY+0487MAY+Alenet21tutos+(6).png"
+                                        alt="">
+                                </button>
+                            </div>
+                            <div class="avatar" (click)="getUrl('11')">
+                                <button class="btn btn-info btn-sm m-2">
+                                    <img src="https://4.bp.blogspot.com/-2akwthftQSY/UZp5yPbkS8I/AAAAAAAAAD4/gKMMymWP958/s1600/BY+0487MAY+Alenet21tutos+(5).png"
+                                        alt="">
+                                </button>
+                            </div>
                         </div>
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Guardar</button>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="volver" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="botonModificar" data-dismiss="modal">Guardar</button>
+
                     </div>
                 </div>
             </div>

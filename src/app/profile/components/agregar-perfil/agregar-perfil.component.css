@@ -101,6 +101,13 @@ i{
     border-radius: 9px;
 }
 
+.titulo-modal{
+   color: #0B9599;
+   font-size: 30px;
+}
+
+
+
 @media (min-width: 1300px) {
     .contenedor{
         max-width: 500px;
