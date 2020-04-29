@@ -1,1 +1,61 @@
-<p>play works!</p>
+<div class="reproductor" id="reproductor">
+    <div class="cerrar" (click)="cerrarVideo()"><i class="fas fa-times-circle fa-3x"></i></div>
+    <div class="video_youtube_gc">
+        <div class="video_youtube">
+            <iframe class="video" id="videoYoutube" width="560" height="260"
+                src="https://www.youtube.com/embed/FRbV0nKN_ss" frameborder="0"
+                allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Aquí se deben imprimir los resultados de busqueda, el contenedor está en display none por defecto -->
+<div class="discover" id="resultado">
+    <div class="title">
+        <h1>Resultado de búsqueda</h1>
+    </div>
+
+    <div class="contenedorVideos">
+        <div *ngFor="let results of resultsSearch" class="cajaVideo">
+            <div class="video">
+                <div class="imagen">
+                    <img src="assets/videosPreview/{{results.urlImage}}" alt="{{results.name}}">
+                </div>
+            </div>
+            <div class="play" (click)="abrirVideo(results.url)">
+                <i class="fab fa-youtube" id="youtube"></i>
+            </div>
+            <div class="nombre">
+                {{results.name}}
+                <div class="agregarFavorito" (click)="agregarFavorito(results.url)"><i class="fas fa-heart"></i></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="discover">
+    <div class="title">
+        <h1>Descubre nuevas aventuras</h1>
+    </div>
+
+    <div class="contenedorVideos">
+        <div *ngFor="let video of films| slice:0:12" class="cajaVideo">
+            <div class="video">
+                <div class="imagen">
+                    <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
+                </div>
+            </div>
+            <div class="play" (click)="abrirVideo(video.url)">
+                <i class="fab fa-youtube" id="youtube"></i>
+            </div>
+            <div class="nombre">
+                {{video.name}}
+                <div class="agregarFavorito" (click)="agregarFavorito(video.url)"><i class="fas fa-heart"></i></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
