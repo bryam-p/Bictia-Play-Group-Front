@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('id', data.dataUser._id)
         console.log(data)
         swal.fire(`Bienvenido ${this.UserHTML.email}`, this.alertSweet, 'success')
-        this.router.navigate(['/home'])
+        this.router.navigate(['/elegirPerfil'])
 
         console.log(data)
       } else {
