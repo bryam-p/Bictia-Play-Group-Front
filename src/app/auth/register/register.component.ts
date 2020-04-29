@@ -13,12 +13,11 @@ export class RegisterComponent implements OnInit {
 
   alertSweet: string = ''
 
-  user: User = {
+  user: any = {
     name: '',
     email: '',
     password: '',
-    birthday: new Date,
-    profiles: null
+    birthday: new Date
   }
 
 
