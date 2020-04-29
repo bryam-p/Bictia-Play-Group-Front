@@ -1,13 +1,19 @@
 <div class="container">
     <span class="title">¿Quien esta viendo?</span>
     <div class="row">
-        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU" alt=""><span><h4>Perfil 1</h4></span></div>
-        <div class="avatar"><img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png" alt=""><span><h4>Perfil 2</h4></span></div>
-        <div class="avatar"><img src="https://los40es00.epimg.net/los40/imagenes/2020/02/04/cinetv/1580834241_572538_1580834379_noticia_normal.jpg" alt=""><span><h4>Perfil 3</h4></span></div>
-        
-        <div class="avatar"><a [routerLink]="['/agregarPerfil']"><i class="fas fa-plus-square"></i></a><span><h4>Agregar</h4></span></div>
+        <div *ngFor="let profile of profiles" class="avatar col m-2">
+            <button class="btn btn-info btn-sm m-2 rounded-lg" (click)="getId(profile._id, profile.name)">
+                <img [src]="profile.avatarUrl">
+                <div>
+                    <h4 class="text-center">{{profile.name}}</h4>
+                </div>
+            </button>
+        </div>
+        <div class="avatar"><a [routerLink]="['/agregarPerfil']"><i class="fas fa-plus-square"></i></a><span>
+                <h4>Agregar</h4>
+            </span></div>
     </div>
     <div class="row">
-        <button class="volver" [routerLink]="['/home/home']"  >Salir</button>
+        <button class="volver" [routerLink]="['/home/home']">Salir</button>
     </div>
 </div>

@@ -14,13 +14,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  alertSweet: string = ''
+
   constructor(private userService: UserService,
     private router: Router) {
 
   }
-
-  alertSweet: string = ''
-
 
   UserHTML: any = {
     name: '',

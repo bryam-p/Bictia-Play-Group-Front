@@ -6,23 +6,12 @@
         </p>
     </span>
     <span class="sub-title">
-        <h6>Elige un avatar</h6>
+        <h4>Elige un avatar</h4>
     </span>
     <div class="row">
-        <div class="avatar" (click)="getUrl('1')">
-            <button class="btn btn-info btn-sm m-2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU"
-                    alt="">
-            </button>
-        </div>
-        <div class="avatar"  (click)="getUrl('2')">
-            <button class="btn btn-info btn-sm m-2">
-                <img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png"
-                    alt="">
-            </button>
+        <div  *ngIf="profile.avatarUrl !== ''" class="avatar" style="cursor: pointer;"><img [src]="profile.avatarUrl" alt="a"></div>
 
-        </div>
-        <div href="#ventana" data-toggle="modal" class="avatar"><i class="fas fa-plus-square"></i></div>
+        <div href="#ventana" data-toggle="modal" class="avatar" style="cursor: pointer;"><i class="fas fa-plus-square"></i></div>
 
         <div class="mol modal" tabindex="-1" role="dialog" id="ventana">
             <div class="modal-dialog modal-lg " role="document">
@@ -106,12 +95,6 @@
 <div class="container editprofile">
     <div class="container">
         <form class="text-center ">
-
-            <div class="form-group ">
-                <input type="text" class="form-control form-control-sm text-center email" id="imagen"
-                    aria-describedby="" value="null" placeholder="Imagen" name="avatarUrl"
-                    [(ngModel)]="profile.avatarUrl">
-            </div>
 
             <div class="form-group ">
                 <input type="select" class="form-control form-control-sm text-center email" id="selectNickname"

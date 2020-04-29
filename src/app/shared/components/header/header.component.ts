@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import { Film } from 'src/app/interface/film.interface';
+import { UserService } from 'src/app/core/service/user/user.service';
 
 
 
@@ -12,15 +13,19 @@ import { Film } from 'src/app/interface/film.interface';
 })
 export class HeaderComponent implements OnInit {
 
+  public user 
+
   public search:any={
     name:''
   }
 
-  constructor(private filmsService: FilmsService) { 
+  constructor(private filmsService: FilmsService, private userServices: UserService) { 
     console.log(this.search)
+    this.getNameProfile()
   }
 
   ngOnInit(): void {
+    
   }
 
   logout(){
@@ -38,8 +43,16 @@ export class HeaderComponent implements OnInit {
       console.log(this.search.name)
       console.log("data en header--->",data)
       this.filmsService.$ConecctionSearch.emit(data)
+      
     })
   
+  }
+
+  getNameProfile(){
+    this.userServices.$elegirPerfil.subscribe((data:any)=>{
+      console.log("nombre", data)
+      this.user = data
+    })
   }
 
 }
