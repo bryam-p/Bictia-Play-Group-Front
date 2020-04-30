@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { User } from 'src/app/interface/user.interface';
 
@@ -6,6 +6,8 @@ import { User } from 'src/app/interface/user.interface';
   providedIn: 'root'
 })
 export class UserService {
+
+  $elegirPerfil = new EventEmitter<any>()
 
   constructor(private http: HttpClient) {
   }
@@ -28,4 +30,16 @@ export class UserService {
     }
   }
 
+  postProfile(id:string, user:any){
+    return this.http.post<any>(`${this.url}/api/user/addProfile/${id}`, user )
+  
+  }
+
+  getProfile(id:string){
+    return this.http.get<any>(`${this.url}/api/user/getProfiles/${id}`)
+  }
+
+  getFavorite(id:string){
+    return this.http.get<any>(`${this.url}/api/user/favoriteFilms/${id}`)
+  }
 }

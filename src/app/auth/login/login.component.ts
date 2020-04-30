@@ -14,13 +14,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  alertSweet: string = ''
+
   constructor(private userService: UserService,
     private router: Router) {
 
   }
-
-  alertSweet: string = ''
-
 
   UserHTML: any = {
     name: '',
@@ -41,8 +40,11 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('data', data.dataUser.email)
         localStorage.setItem('name', data.dataUser.name)
         localStorage.setItem('role', data.dataUser.role )
+        localStorage.setItem('id', data.dataUser._id)
+        console.log(data)
+
         swal.fire(`Bienvenido ${this.UserHTML.email}`, this.alertSweet, 'success')
-        this.router.navigate(['/home'])
+        this.router.navigate(['/elegirPerfil'])
 
         console.log(data)
       } else {
