@@ -42,4 +42,16 @@ export class UserService {
   getFavorite(id:string){
     return this.http.get<any>(`${this.url}/api/user/favoriteFilms/${id}`)
   }
+
+  addFavorite(id, movieId, profileName){
+    console.log("Agregar a favoritos");
+    const params = JSON.stringify({filmId: movieId, name: profileName});
+    return this.http.put<any>(`${this.url}/api/user/addFavorite/${id}`, params)
+  }
+
+  delFavorite(id, movieId, profileName){
+    console.log("Eliminar de favoritos");
+    const params = JSON.stringify({filmId: movieId, name: profileName});
+    return this.http.put<any>(`${this.url}/api/user/delFavorite/${id}`, params)
+  }
 }

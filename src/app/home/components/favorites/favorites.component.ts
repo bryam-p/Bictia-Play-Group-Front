@@ -67,9 +67,17 @@ export class FavoritesComponent implements OnInit {
     console.log("Este es el video: ->", this.videoDefault);
   }
 
-  agregarFavorito(filmUrl) {
-    console.log('%cConectar con la función', 'color: yellow');
-    alert("Falta conectar con la función");
+  delFavorite(videoId){
+    const id = localStorage.getItem('id');
+    const name = localStorage.getItem('profileName');
+    this.userService.delFavorite(id, videoId, name).subscribe((data:any)=>{
+      console.log(data)
+      // if(data.statusCode === 200) {
+      //   alert("Eliminada de favoritos");
+      // } else {
+      //   alert("Algo salio mal");
+      // }
+    })
   }
 
 

@@ -124,10 +124,16 @@ switch (res.statusCode) {
     });
   }
 
-  getFavorites(){
-    let id = localStorage.getItem('id')
-    this.userService.getFavorite(id).subscribe((data:any)=>{
+  addFavorite(videoId){
+    const id = localStorage.getItem('id');
+    const name = localStorage.getItem('profileName');
+    this.userService.addFavorite(id, videoId, name).subscribe((data:any)=>{
       console.log(data)
+      // if(data.statusCode === 200) {
+      //   alert("Agregado de favoritos");
+      // } else {
+      //   alert("Algo salio mal");
+      // }
     })
   }
 
