@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import { Film } from 'src/app/interface/film.interface';
-import { DefaultValueAccessor } from '@angular/forms';
 import { UserService } from 'src/app/core/service/user/user.service';
 
 
@@ -13,17 +12,19 @@ import { UserService } from 'src/app/core/service/user/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-
   changeName:any = {
     name: localStorage.getItem('name'),
     role: localStorage.getItem('role')
   }
+
+  public user
+
   public search:any = {
     name: ''
 
   }
 
-  constructor(private filmsService: FilmsService) {
+  constructor(private filmsService: FilmsService, private userService: UserService) {
     console.log(this.search)
     this.getNameProfile()
   }
@@ -53,7 +54,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getNameProfile(){
-    this.userServices.$elegirPerfil.subscribe((data:any)=>{
+    this.userService.$elegirPerfil.subscribe((data:any)=>{
       console.log("nombre", data)
       this.user = data
     })

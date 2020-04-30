@@ -31,7 +31,7 @@
                 {{results.name}}
                 <div class="agregarFavorito" (click)="agregarFavorito(results.url)"><i class="fas fa-heart"></i></div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -45,7 +45,7 @@
         <div *ngFor="let video of films" class="cajaVideo">
             <div class="video">
                 <div class="imagen">
-                    <img src="{{video.urlImage}}" alt="{{video.name}}">
+                    <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
                 </div>
             </div>
             <div class="play" (click)="abrirVideo(video.url)">
@@ -55,7 +55,7 @@
                 {{video.name}}
                 <div class="agregarFavorito" (click)="agregarFavorito(video.url)"><i class="fas fa-heart"></i></div>
             </div>
-            
+
         </div>
     </div>
 </div>
