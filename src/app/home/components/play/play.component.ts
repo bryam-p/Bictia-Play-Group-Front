@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import { Film } from 'src/app/interface/film.interface';
+import { UserService } from 'src/app/core/service/user/user.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-play',
@@ -41,7 +43,7 @@ export class PlayComponent implements OnInit {
   public films: Film[];
   public recorrido: number;
 
-  constructor(private service: FilmsService) {
+  constructor(private service: FilmsService, private userService:UserService) {
     this.recorrido = 1;
     this.getSearch()
   }
@@ -87,5 +89,21 @@ switch (res.statusCode) {
     });
   }
 
+  addFavorite(videoId){
+    const id = localStorage.getItem('id');
+    const name = localStorage.getItem('profileName');
+    this.userService.addFavorite(id, videoId, name).subscribe((data:any)=>{
+      console.log(data)
+      // if(data.statusCode === 200) {
+      //   alert("Agregado de favoritos");
+      // } else {
+      //   alert("Algo salio mal");
+      // }
+      swal.fire({
+        title: `Se agrego a favoritos correctamente`,
+        icon: 'success'
+      })
+    })
+  }
 
 }

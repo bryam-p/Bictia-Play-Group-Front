@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from 'src/app/interface/film.interface';
 import { FilmsService } from 'src/app/core/service/films/films.service';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { UserService } from 'src/app/core/service/user/user.service';
 
@@ -134,6 +134,11 @@ switch (res.statusCode) {
       // } else {
       //   alert("Algo salio mal");
       // }
+      swal.fire({
+        title: `Se agrego a favoritos correctamente`,
+        icon: 'success'
+      })
+
     })
   }
 

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Film } from 'src/app/interface/film.interface';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import { UserService } from 'src/app/core/service/user/user.service';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorites',
@@ -70,7 +71,7 @@ export class FavoritesComponent implements OnInit {
   public films: Film[];
   public recorrido: number;
 
-  constructor(private service: FilmsService, private userService: UserService) {
+  constructor(private service: FilmsService, private userService: UserService, private router:Router) {
     this.getSearch()
   }
 
@@ -107,6 +108,12 @@ export class FavoritesComponent implements OnInit {
     let name = localStorage.getItem('profileName')
     this.userService.delFavorite(id, movieId, name).subscribe((data: any) => {
       console.log(data)
+      swal.fire({
+        title: `Se ha eliminado correctamente`,
+        icon: 'warning'
+      })
+      this.router.navigate(['/home/favorites'])
     })
   }
+
 }
