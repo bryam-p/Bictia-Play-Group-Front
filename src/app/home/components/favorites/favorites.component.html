@@ -1,1 +1,23 @@
-<p>favorites works!</p>
+<div class="discover">
+    <div class="title">
+        <h1>Descubre nuevas aventuras</h1>
+    </div>
+
+    <div class="contenedorVideos">
+        <div *ngFor="let video of films| slice:0:12" class="cajaVideo">
+            <div class="video">
+                <div class="imagen">
+                    <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
+                </div>
+            </div>
+            <div class="play" (click)="abrirVideo(video.url)">
+                <i class="fab fa-youtube" id="youtube"></i>
+            </div>
+            <div class="nombre">
+                {{video.name}}
+                <div class="agregarFavorito" (click)="agregarFavorito(video.url)"><i class="fas fa-heart"></i></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
