@@ -10,8 +10,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
-	
-  resultsSearch:any[]=[]
+
+  resultsSearch: any[] = []
   public videoDefault = null;
   ultimosEstrenosPPAL = [
     {
@@ -67,24 +67,10 @@ export class FavoritesComponent implements OnInit {
     console.log("Este es el video: ->", this.videoDefault);
   }
 
-  delFavorite(videoId){
-    const id = localStorage.getItem('id');
-    const name = localStorage.getItem('profileName');
-    this.userService.delFavorite(id, videoId, name).subscribe((data:any)=>{
-      console.log(data)
-      // if(data.statusCode === 200) {
-      //   alert("Eliminada de favoritos");
-      // } else {
-      //   alert("Algo salio mal");
-      // }
-    })
-  }
-
-
   public films: Film[];
   public recorrido: number;
 
-  constructor(private service: FilmsService, private userService:UserService) { 
+  constructor(private service: FilmsService, private userService: UserService) {
     this.getSearch()
   }
 
@@ -92,18 +78,18 @@ export class FavoritesComponent implements OnInit {
     this.getFavorites();
   }
 
-  getSearch(){
-    this.service.$ConecctionSearch.subscribe((data:any)=>{
-      console.log("Datos del search en home",data)
-      this.resultsSearch = data.results 
+  getSearch() {
+    this.service.$ConecctionSearch.subscribe((data: any) => {
+      console.log("Datos del search en home", data)
+      this.resultsSearch = data.results
       const statusSearch = document.getElementById('resultado')
       statusSearch.style.display = 'block'
     })
   }
 
-  getFavorites(){ //Se suscribe al servicio
-		let id = localStorage.getItem('id')
-		this.userService.getFavorite(id).subscribe((data:any)=>{
+  getFavorites() { //Se suscribe al servicio
+    let id = localStorage.getItem('id')
+    this.userService.getFavorite(id).subscribe((data: any) => {
       let profile;
       for (let i = 0; i < data.user.profiles.length; i++) {
         if (data.user.profiles[i].name === localStorage.getItem('profileName')) {
@@ -114,5 +100,13 @@ export class FavoritesComponent implements OnInit {
         }
       }
     });
+  }
+
+  deleteFavorite(movieId) {
+    let id = localStorage.getItem('id')
+    let name = localStorage.getItem('profileName')
+    this.userService.delFavorite(id, movieId, name).subscribe((data: any) => {
+      console.log(data)
+    })
   }
 }

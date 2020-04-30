@@ -30,28 +30,26 @@ export class UserService {
     }
   }
 
-  postProfile(id:string, user:any){
-    return this.http.post<any>(`${this.url}/api/user/addProfile/${id}`, user )
-  
+  postProfile(id: string, user: any) {
+    return this.http.post<any>(`${this.url}/api/user/addProfile/${id}`, user)
+
   }
 
-  getProfile(id:string){
+  getProfile(id: string) {
     return this.http.get<any>(`${this.url}/api/user/getProfiles/${id}`)
   }
 
-  getFavorite(id:string){
+  getFavorite(id: string) {
     return this.http.get<any>(`${this.url}/api/user/favoriteFilms/${id}`)
   }
 
-  addFavorite(id, movieId, profileName){
+  addFavorite(id, movieId, profileName) {
     console.log("Agregar a favoritos");
-    const params = JSON.stringify({filmId: movieId, name: profileName});
-    return this.http.put<any>(`${this.url}/api/user/addFavorite/${id}`, params)
+    return this.http.put<any>(`${this.url}/api/user/addFavorite/${id}`, { name: profileName, filmId: movieId })
   }
 
-  delFavorite(id, movieId, profileName){
+  delFavorite(id, movieId, profileName) {
     console.log("Eliminar de favoritos");
-    const params = JSON.stringify({filmId: movieId, name: profileName});
-    return this.http.put<any>(`${this.url}/api/user/delFavorite/${id}`, params)
+    return this.http.put<any>(`${this.url}/api/user/delFavorite/${id}`, { name: profileName, filmId: movieId })
   }
 }
