@@ -38,8 +38,11 @@ export class LoginComponent implements OnInit {
 
       if (data.statusCode === 200) {
         localStorage.setItem('data', data.dataUser.email)
+        localStorage.setItem('name', data.dataUser.name)
+        localStorage.setItem('role', data.dataUser.role )
         localStorage.setItem('id', data.dataUser._id)
         console.log(data)
+
         swal.fire(`Bienvenido ${this.UserHTML.email}`, this.alertSweet, 'success')
         this.router.navigate(['/elegirPerfil'])
 
@@ -51,6 +54,5 @@ export class LoginComponent implements OnInit {
 
     })
   }
-
 
 }

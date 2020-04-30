@@ -10,7 +10,8 @@
             <button class="btn btn-primary red" [routerLink]="['/play']"><i class="fas fa-play fa-2x"></i></button>
             <button class="btn btn-primary orange" [routerLink]="['/favorites']"><i
                     class="fas fa-star fa-2x"></i></button>
-
+            <button class="btn btn-primary red" *ngIf="changeName.role === 'ADMIN'" [routerLink]="['/adminPerfil']"><i
+                    class="fas fa-photo-video fa-2x"></i></button>
             <div class="buscador">
                 <input class="search" type="text" name="name" [(ngModel)]="search.name">
                 <button height="10px" (click)="gbusqueda();getSearch()"><i class="fas fa-search"></i></button>
@@ -22,9 +23,9 @@
                 <div class="container menu-block is-active">
                     <div class="menu-list">
                         <ul>
-                            <li><a>
-                                    <h5>{{user}}</h5>
-                                </a></li>
+                            <li>
+                                <h5 style="color: rgb(185, 252, 78);">{{changeName.name}} </h5>
+                            </li>
                             <li><a [routerLink]="['/editarPerfil']" click> Editar Perfil</a></li>
                             <li><a [routerLink]="['/elegirPerfil']"> Elegir Perfil</a></li>
                             <li><a href="" (click)="logout()" [routerLink]="['/auth']"> Cerrar sesion</a></li>

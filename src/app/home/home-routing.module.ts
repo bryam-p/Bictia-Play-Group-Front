@@ -6,6 +6,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 import { ElegirPerfilComponent } from '../profile/components/elegir-perfil/elegir-perfil.component';
 import { AgregarPerfilComponent} from '../profile/components/agregar-perfil/agregar-perfil.component';
+import { AdminComponent } from '../admin/admin.component';
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'favorites', component: FavoritesComponent},
   {path: 'editarPerfil', component: EditarPerfilComponent},
   {path: 'elegirPerfil', component: ElegirPerfilComponent},
-  {path: 'agregarPerfil', component: AgregarPerfilComponent}
+  {path: 'agregarPerfil', component: AgregarPerfilComponent},
+  {path: 'adminPerfil', component: AdminComponent}
 ];
 
 @NgModule({

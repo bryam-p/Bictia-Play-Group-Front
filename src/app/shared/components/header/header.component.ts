@@ -5,7 +5,6 @@ import { Film } from 'src/app/interface/film.interface';
 import { UserService } from 'src/app/core/service/user/user.service';
 
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,19 +12,25 @@ import { UserService } from 'src/app/core/service/user/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public user 
-
-  public search:any={
-    name:''
+  changeName:any = {
+    name: localStorage.getItem('name'),
+    role: localStorage.getItem('role')
   }
 
-  constructor(private filmsService: FilmsService, private userServices: UserService) { 
+  public user
+
+  public search:any = {
+    name: ''
+
+  }
+
+  constructor(private filmsService: FilmsService, private userService: UserService) {
     console.log(this.search)
     this.getNameProfile()
   }
 
   ngOnInit(): void {
-    
+
   }
 
   logout(){
@@ -43,13 +48,13 @@ export class HeaderComponent implements OnInit {
       console.log(this.search.name)
       console.log("data en header--->",data)
       this.filmsService.$ConecctionSearch.emit(data)
-      
+
     })
-  
+
   }
 
   getNameProfile(){
-    this.userServices.$elegirPerfil.subscribe((data:any)=>{
+    this.userService.$elegirPerfil.subscribe((data:any)=>{
       console.log("nombre", data)
       this.user = data
     })
