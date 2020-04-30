@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit {
 
         console.log(data)
       } else {
-        swal.fire(data.menssage, this.alertSweet, 'warning')
-        console.log(data.menssage)
+        swal.fire(data.message, this.alertSweet, 'warning')
+        console.log(data)
       }
 
     })
