@@ -3,6 +3,7 @@ import { Film } from 'src/app/interface/film.interface';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import Swal from 'sweetalert2';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { UserService } from 'src/app/core/service/user/user.service';
 
 
 @Component({
@@ -77,7 +78,7 @@ export class HomeComponent implements OnInit {
   public films: Film[];
   public recorrido: number;
 
-  constructor(private service: FilmsService) {
+  constructor(private service: FilmsService, private userService:UserService) {
     this.recorrido = 1;
     this.getSearch()
   }
@@ -123,5 +124,11 @@ switch (res.statusCode) {
     });
   }
 
+  getFavorites(){
+    let id = localStorage.getItem('id')
+    this.userService.getFavorite(id).subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
 
 }

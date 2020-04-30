@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from 'src/app/interface/film.interface';
-import { FilmsService } from 'src/app/core/service/films/films.service';
+// import { FilmsService } from 'src/app/core/service/films/films.service';
+import { UserService } from 'src/app/core/service/user/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -75,36 +76,27 @@ export class FavoritesComponent implements OnInit {
   public films: Film[];
   public recorrido: number;
 
-  constructor(private service: FilmsService) {
-    this.recorrido = 1;
-    this.getSearch()
+  constructor(private userService: UserService) { 
+    this.getFavorites()
   }
 
   ngOnInit(): void {
-    this.getFilms();
-    // this.getFavorites();
+    this.getFavorites();
   }
 
-  getSearch(){
-    this.service.$ConecctionSearch.subscribe((data:any)=>{
-      console.log("Datos del search en home",data)
-      this.resultsSearch = data.results 
-      const statusSearch = document.getElementById('resultado')
-      statusSearch.style.display = 'block'
+  // getSearch(){
+  //   this.service.$ConecctionSearch.subscribe((data:any)=>{
+  //     console.log("Datos del search en home",data)
+  //     this.resultsSearch = data.results 
+  //     const statusSearch = document.getElementById('resultado')
+  //     statusSearch.style.display = 'block'
+  //   })
+  // }
+
+  getFavorites(){ //Se suscribe al servicio
+    let id = localStorage.getItem('id')
+    this.userService.getFavorite(id).subscribe((data:any)=>{
+      console.log(data)
     })
   }
-
-  getFilms() {
-    this.service.getFilms().subscribe((res: any) => {
-      console.log(res);
-      this.films = res.films;
-    });
-  }
-
-	// getFavorites() {
-	// 	this.service.getFavorites().subscribe((res: any) => {
-  //     console.log(res);
-  //   });
-	// }
-
 }
