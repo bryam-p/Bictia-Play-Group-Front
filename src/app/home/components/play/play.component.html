@@ -42,10 +42,10 @@
     </div>
 
     <div class="contenedorVideos">
-        <div *ngFor="let video of films| slice:0:12" class="cajaVideo">
+        <div *ngFor="let video of films" class="cajaVideo">
             <div class="video">
                 <div class="imagen">
-                    <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
+                    <img src="{{video.urlImage}}" alt="{{video.name}}">
                 </div>
             </div>
             <div class="play" (click)="abrirVideo(video.url)">

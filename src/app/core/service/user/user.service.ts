@@ -32,10 +32,14 @@ export class UserService {
 
   postProfile(id:string, user:any){
     return this.http.post<any>(`${this.url}/api/user/addProfile/${id}`, user )
+  
   }
 
   getProfile(id:string){
     return this.http.get<any>(`${this.url}/api/user/getProfiles/${id}`)
   }
-  
+
+  getFavorite(id:string){
+    return this.http.get<any>(`${this.url}/api/user/favoriteFilms/${id}`)
+  }
 }
