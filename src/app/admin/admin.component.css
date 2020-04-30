@@ -54,6 +54,17 @@ form{
   height: 300px;
   margin: 5% 0;
   border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+.titulo{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
 }
 
 @media(max-width:768px){

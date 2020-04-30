@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilmsService } from 'src/app/core/service/films/films.service';
 import { Film } from 'src/app/interface/film.interface';
+import { DefaultValueAccessor } from '@angular/forms';
 
 
 
@@ -12,11 +13,17 @@ import { Film } from 'src/app/interface/film.interface';
 })
 export class HeaderComponent implements OnInit {
 
-  public search:any={
-    name:''
+
+  changeName:any = {
+    name: localStorage.getItem('name'),
+    role: localStorage.getItem('role')
+  }
+  public search:any = {
+    name: ''
+
   }
 
-  constructor(private filmsService: FilmsService) { 
+  constructor(private filmsService: FilmsService) {
     console.log(this.search)
   }
 
@@ -39,7 +46,7 @@ export class HeaderComponent implements OnInit {
       console.log("data en header--->",data)
       this.filmsService.$ConecctionSearch.emit(data)
     })
-  
+
   }
 
 }
