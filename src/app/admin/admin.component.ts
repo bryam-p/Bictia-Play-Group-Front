@@ -16,24 +16,24 @@ export class AdminComponent implements OnInit {
   filmForm: FormGroup
 
 
-    film: any = {
-        name: '',
-        category: '',
-        type: 'Kids',
-        url: '',
-        urlImage: '',
-        createDate: Date.now,
-        createBy: localStorage.getItem('name')
+  film: any = {
+    name: '',
+    category: '',
+    type: 'Kids',
+    url: '',
+    urlImage: '',
+    createDate: Date.now,
+    createBy: localStorage.getItem('name')
   }
 
   constructor(private filmsService: FilmsService, private router: Router, private builder: FormBuilder) {
 
 
     this.filmForm = this.builder.group({
-        name: ['', Validators.required],
-        category: ['', Validators.required],
-        url: ['', Validators.required],
-        urlImage: ['', Validators.required]
+      name: ['', Validators.required],
+      category: ['', Validators.required],
+      url: ['', Validators.required],
+      urlImage: ['', Validators.required]
     })
   }
 
@@ -42,17 +42,13 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-createFilm() {
+  createFilm() {
     this.filmsService.postFilm(this.film).subscribe((data: any) => {
-      if (data.satatusCode ===200){
-        swal.fire(`Video agregado exitosamente`, this.alertSweet, 'success')
-        this.router.navigate(['/home'])
 
-      } else {
-        swal.fire( data.err, this.alertSweet, 'warning')
-      }
+      swal.fire(`Video agregado exitosamente`, this.alertSweet, 'success')
+      this.router.navigate(['/home/home'])
       console.log(data)
     })
-}
+  }
 
 }
