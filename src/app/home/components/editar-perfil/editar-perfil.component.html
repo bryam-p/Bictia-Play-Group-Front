@@ -1,10 +1,17 @@
 <div class="container">
     <span class="title">Editar Perfil</span>
-    <span class="sub-title"><h6>Elige tu avatar</h6></span>
-    <div class="row">
-        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwgcj3Khz9ddl3J3bPKtZEeaQ-Ivp4NJ-u98OlHT5ktrK_G6xy&usqp=CAU" alt=""></div>
-        <div class="avatar"><img src="https://www.al.com/resizer/8r5fqsmflSBq5KtOk5yDXzLKipw=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/news_east_alabama_impact/photo/dora-the-explorerpng-7c414cb2dc723d07.png" alt=""></div>
-        <div class="avatar"><i class="fas fa-plus-square"></i></div>
+    <span class="sub-title"><h4>Elige el perfil a modificar</h4></span>
+    <div class="row d-flex justify-content-center">
+        <div *ngFor="let profile of profiles" class="avatar col-3 ">
+            <div class="col-12 text-center m-2 ">
+                <button class="btn btn-info btn-sm m-2 rounded-lg" (click)="getNickname(profile.name)">
+                    <img [src]="profile.avatarUrl">
+                    <div>
+                        <h4 class="text-center">{{profile.name}}</h4>
+                    </div>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container editprofile">
@@ -13,7 +20,7 @@
 
         <div class="form-group ">
             <input type="select" class="form-control form-control-sm text-center email" id="selectNickname"
-                aria-describedby="emailHelp" placeholder="Elegir Nickname">
+                aria-describedby="emailHelp" placeholder="{{nickname}}">
         </div>
 
         <div class="form-group">
