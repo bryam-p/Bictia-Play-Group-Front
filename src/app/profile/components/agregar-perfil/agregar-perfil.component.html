@@ -109,6 +109,10 @@
                     placeholder="Fecha de nacimiento" style="max-width: 200px;" name="birthday"
                     [(ngModel)]="profile.birthday">
             </div>
+            <div class="form-group ">
+                <input type="password" class="form-control form-control-sm text-center email"
+                    aria-describedby="emailHelp" placeholder="Confirmar contraseña">
+            </div>
             <div class="separacion-botones">
                 <button class="volver" [routerLink]="['/home/home']">Salir</button>
                 <button class="botonModificar" (click)="postProfile()">Agregar</button>
