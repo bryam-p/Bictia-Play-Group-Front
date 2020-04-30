@@ -73,10 +73,11 @@ export class FavoritesComponent implements OnInit {
 
   constructor(private service: FilmsService, private userService: UserService, private router:Router) {
     this.getSearch()
+    this.getFavorites();
   }
 
   ngOnInit(): void {
-    this.getFavorites();
+    
   }
 
   getSearch() {
@@ -100,6 +101,7 @@ export class FavoritesComponent implements OnInit {
           }
         }
       }
+      console.log(data)
     });
   }
 

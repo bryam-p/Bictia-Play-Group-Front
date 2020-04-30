@@ -9,10 +9,11 @@ body {
 }
 
 .title{
-   color: #C4FFEA;
+   color: rgb(253, 253, 253);
    text-align: center;
    animation-name: bounceIn;
   animation-duration: 2s;
+  font-size: 30px;
 }
 
 span{
