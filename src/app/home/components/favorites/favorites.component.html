@@ -1,10 +1,10 @@
 <div class="discover">
     <div class="title">
-        <h1>Descubre nuevas aventuras</h1>
+        <h1>Tus favoritos</h1>
     </div>
 
     <div class="contenedorVideos">
-        <div *ngFor="let video of films| slice:0:12" class="cajaVideo">
+        <div *ngFor="let video of films" class="cajaVideo">
             <div class="video">
                 <div class="imagen">
                     <img src="assets/videosPreview/{{video.urlImage}}" alt="{{video.name}}">
